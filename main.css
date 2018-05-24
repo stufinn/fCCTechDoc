@@ -48,3 +48,21 @@ table {
 }
 
 /* END OF CSS RESET */
+
+body {
+    display: flex;
+    justify-content: flex-start;
+    width: 100vw;                   /* Ensures that page is limited to view width */
+}
+nav {
+    width: 25%;
+    height: 100vh;
+    border-right: solid 1px;
+    position: fixed;
+
+}
+
+#main-doc {
+    width: 75%;
+    height: 2000px;
+}
