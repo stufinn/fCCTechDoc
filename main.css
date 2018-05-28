@@ -5,7 +5,7 @@
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
+a, abbr, acronym, address, big, cite, /* code ,*/
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
@@ -51,18 +51,95 @@ table {
 
 body {
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
     width: 100vw;                   /* Ensures that page is limited to view width */
-}
-nav {
-    width: 25%;
-    height: 100vh;
-    border-right: solid 1px;
-    position: fixed;
-
+    box-sizing: border-box;
 }
 
 #main-doc {
-    width: 75%;
+    display: block;
+    width: 73vw;
     height: 2000px;
+    align-self: flex-end;           /* aligns section to the right side */
+}
+
+
+code {
+    display: block;
+    padding: 15px 0;
+    line-height: 1.5em;
+}
+
+h2 {
+    font-style: italic;
+    padding-bottom: 15px;
+}
+
+h3 {
+    font-style: italic;
+    padding-bottom: 10px;
+}
+
+em {
+    font-weight: 600;
+}
+
+p {
+    padding-bottom: 10px;
+    line-height: 1.2em;
+}
+
+.highlight {
+    padding: 0 3px;
+    background-color: #d3d3d3;
+    color: red;
+}
+
+/* NAV BAR */
+
+nav {
+    display: block;
+    width: 25vw;
+    height: 100vh;
+    border-right: solid 1px;
+    position: fixed;
+}
+
+@media (max-width: 700px) {
+    
+    
+    nav {
+        width: 98vw;
+        display: block;
+        min-height: 100px;
+        max-height: 30vh;
+        overflow: scroll;
+        border-right: none;
+        position: static; 
+    }
+
+    #main-doc {
+        width: auto;
+        padding: 15px;
+    }
+}
+
+#navbar header {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    border-bottom: solid 1px black;
+}
+
+.main-section header {
+    padding: 15px 0;
+    font-weight: bold;
+}
+
+.nav-link {
+    display: flex;
+    height: 50px;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: solid 1px black;
 }

@@ -12,13 +12,167 @@
 
 <body>
     
-    <nav>
-        <h1>NodeJS</h1>
+    <nav id="navbar">
+
+        <header>Vue.js</header>
+
+        <a href="#Introduction" class="nav-link">Introduction</a>
+
+        <a href="#What_You_Need_To_Know" class="nav-link">What you need to know</a>
+
+        <a href="#The_Vue_Instance" class="nav-link">The Vue Instance</a>
+
+        <a href="#Template_Syntax" class="nav-link">Template Syntax</a>
+
+        <a href="#Event_Handling" class="nav-link">Event Handling</a>
+
     </nav>
 
-    <div id="main-doc">
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            
+            <header>Introduction</header>
 
-    </div>
+            <p>Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.</p>
+
+            <p>If you’d like to learn more about Vue before diving in, we created a video walking through the core principles and a sample project.</p>
+                    
+            <p>If you are an experienced frontend developer and want to know how Vue compares to other libraries/frameworks, check out the Comparison with Other Frameworks.</p>
+
+            <code></code>
+
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+        </section>
+
+        <section class="main-section" id="What_You_Need_To_Know">
+
+                <header>What You Need To Know</header>
+
+                <p>The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.</p>
+    
+                <p>The easiest way to try out Vue.js is using the JSFiddle Hello World example. Feel free to open it in another tab and follow along as we go through some basic examples. Or, you can create an index.html file and include Vue with:</p>
+    
+                <code>
+                    &lt;!-- development version, includes helpful console warnings --> <br>
+                    &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">&lt;/script>
+                </code>
+
+                <p>or</p>
+
+                <code><!-- development version, includes helpful console warnings -->
+                    &lt;!-- production version, optimized for size and speed --><br>
+                    &lt;script src="https://cdn.jsdelivr.net/npm/vue">&lt;/script>
+                </code>
+
+    
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+        </section>
+
+        <section class="main-section" id="The_Vue_Instance">
+                <header>The Vue Instance</header>
+
+                <h2>Creating a Vue Instance</h2>
+
+                <div id="grey-line"></div>
+
+                <p>Every Vue application starts by creating a new <em>Vue instance</em> with the Vue function:</p>
+
+                <code>
+                    var vm = new Vue({<br>
+                        // options<br>
+                      })<br>
+                </code>
+    
+                <p>Although not strictly associated with the MVVM pattern, Vue’s design was partly inspired by it. As a convention, we often use the variable vm (short for ViewModel) to refer to our Vue instance.</p>
+
+                <p>When you create a Vue instance, you pass in an options object. The majority of this guide describes how you can use these options to create your desired behavior. For reference, you can also browse the full list of options in the API reference.</p>             
+    
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
+        </section>
+
+        <section class="main-section" id="Template_Syntax">
+            <header>Template Syntax</header>
+
+            <p>Vue.js uses an HTML-based template syntax that allows you to declaratively bind the rendered DOM to the underlying Vue instance’s data. All Vue.js templates are valid HTML that can be parsed by spec-compliant browsers and HTML parsers.</p>
+
+            <p>Under the hood, Vue compiles the templates into Virtual DOM render functions. Combined with the reactivity system, Vue is able to intelligently figure out the minimal number of components to re-render and apply the minimal amount of DOM manipulations when the app state changes.</p>
+                    
+            <p>If you are familiar with Virtual DOM concepts and prefer the raw power of JavaScript, you can also directly write render functions instead of templates, with optional JSX support.</p>
+
+            <h2>Interpolations</h2>
+
+            <h3>Text</h3>
+
+            <p>The most basic form of data binding is text interpolation using the “Mustache” syntax (double curly braces):</p>
+
+            <code>&lt;span>Message: {{ msg }}&lt;/span></code>
+
+            <p>The mustache tag will be replaced with the value of the <span class="highlight">msg</span> property on the corresponding data object. It will also be updated whenever the data object’s <span class="highlight">msg</span> property changes.</p>
+
+            <p>You can also perform one-time interpolations that do not update on data change by using the v-once directive, but keep in mind this will also affect any other bindings on the same node:</p>
+
+            <code>&lt;spanv-once>This will never change: {{ msg }}&lt;/span></code>
+
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+        </section>
+
+        <section class="main-section" id="Event_Handling">
+
+                <header>Event Handling</header>
+
+                <p>We can use the <span class="highlight">v-on</span> directive to listen to DOM events and run some JavaScript when they’re triggered.</p>
+    
+                <p>For example:</p>
+
+                <p>HTML</p>
+                <code>&lt;div id="example-1"><br>
+                    &nbsp &lt;button v-on:click="counter += 1">Add 1&lt;/button><br>
+                    &nbsp &lt;p>The button above has been clicked {{ counter }} times.&lt;/p><br>
+                    &lt;/div>
+                </code>
+    
+                <p>JS</p>
+                <code>
+                        var example1 = new Vue({ <br>
+                            &nbsp    el: '#example-1', <br>
+                            &nbsp data: { <br>
+                                &nbsp &nbsp  counter: 0 <br>
+                            &nbsp} <br>
+                        })
+                </code>
+
+                <p>Result:</p>
+
+                <!-- TO BE ADDED -->
+
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+        </section>
+        
+
+    </main>
 
 
 
