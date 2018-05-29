@@ -14,17 +14,21 @@
     
     <nav id="navbar">
 
-        <header>Vue.js</header>
+        <header>CSS Grid (Basic Concepts)</header>
 
         <a href="#Introduction" class="nav-link">Introduction</a>
 
-        <a href="#What_You_Need_To_Know" class="nav-link">What you need to know</a>
+        <a href="#What_Is_A_Grid?" class="nav-link">What Is A Grid?</a>
 
-        <a href="#The_Vue_Instance" class="nav-link">The Vue Instance</a>
+        <a href="#The_Grid_Container" class="nav-link">The Grid Container</a>
 
-        <a href="#Template_Syntax" class="nav-link">Template Syntax</a>
+        <a href="#Grid_Tracks" class="nav-link">Grid Tracks</a>
 
-        <a href="#Event_Handling" class="nav-link">Event Handling</a>
+        <a href="#Grid_Lines" class="nav-link">Grid Lines</a>
+
+        <a href="#Grid_Cells" class="nav-link">Grid Cells</a>
+
+        <a href="#Grid_Areas" class="nav-link">Grid Areas</a>
 
     </nav>
 
@@ -33,11 +37,8 @@
             
             <header>Introduction</header>
 
-            <p>Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.</p>
-
-            <p>If you’d like to learn more about Vue before diving in, we created a video walking through the core principles and a sample project.</p>
-                    
-            <p>If you are an experienced frontend developer and want to know how Vue compares to other libraries/frameworks, check out the Comparison with Other Frameworks.</p>
+            <p>CSS Grid Layout introduces a two-dimensional grid system to CSS. Grids can be used to layout major page areas or small user interface elements. 
+                This article introduces the CSS Grid Layout and the new terminology that is part of the CSS Grid Layout Level 1 specification. The features shown in this overview will be then explained in greater detail in the rest of this guide. </p>
 
             <code></code>
 
@@ -49,27 +50,184 @@
 
         </section>
 
-        <section class="main-section" id="What_You_Need_To_Know">
+        <section class="main-section" id="What_Is_A_Grid?">     <!-- is the question-mark going to be an issue? -->
 
-                <header>What You Need To Know</header>
+                <header>What Is A Grid?</header>
 
-                <p>The official guide assumes intermediate level knowledge of HTML, CSS, and JavaScript. If you are totally new to frontend development, it might not be the best idea to jump right into a framework as your first step - grasp the basics then come back! Prior experience with other frameworks helps, but is not required.</p>
-    
-                <p>The easiest way to try out Vue.js is using the JSFiddle Hello World example. Feel free to open it in another tab and follow along as we go through some basic examples. Or, you can create an index.html file and include Vue with:</p>
+                <p>A grid is an intersecting set of horizontal and vertical lines – one set defining columns and the other rows. 
+                    Elements can be placed onto the grid, respecting these column and row lines. CSS grid layout has the following features:</p>
+
+                <ul>
+                        <li>Fixed and flexible track sizes</li>
+                        <li>Item placement</li>
+                        <li>Creation of additional tracks to hold content</li>
+                        <li>Alignment control</li>
+                        <li>Control of overlapping content</li>
+                </ul>
+
+                <p>Grid is a powerful specification and when combined with other parts of CSS such as flexbox, 
+                    can help you to create layouts that were previously impossible to build in CSS. It all starts by creating a grid in your grid container.</p>
     
                 <code>
-                    &lt;!-- development version, includes helpful console warnings --> <br>
-                    &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">&lt;/script>
                 </code>
 
-                <p>or</p>
+        </section>
 
-                <code><!-- development version, includes helpful console warnings -->
-                    &lt;!-- production version, optimized for size and speed --><br>
-                    &lt;script src="https://cdn.jsdelivr.net/npm/vue">&lt;/script>
+        <section class="main-section" id="The_Grid_Container">
+                <header>The Grid Container</header>
+
+                <p>We create a grid container by declaring <span class="highlight">display: grid</span> or <span class="highlight">inline-grid</span> on an element. 
+                    As soon as we do this all direct children of that element will become grid items.</p>
+
+                <p>In this example, I have a containing div with a class of wrapper, inside are five child elements.</p>
+
+                <code>
+                    &lt;div class="wrapper">     <br>
+                    &nbsp &lt;div>One&lt;/div>   <br>
+                    &nbsp &lt;div>Two&lt;/div>   <br>
+                    &nbsp &lt;div>Three&lt;/div> <br>
+                    &nbsp &lt;div>Four&lt;/div>  <br>
+                    &nbsp &lt;div>Five&lt;/div>  <br>
+                    &lt;/div>
                 </code>
-
     
+                <p>I make the <span class="highlight">.wrapper</span> a grid container.</p>
+                
+                <code>
+                .wrapper {                  <br>
+                    &nbsp display: grid;    <br>
+                }                           <br>
+                </code>
+
+                <p>
+                    All the direct children are now grid items. In a web browser, you won’t see any difference to how these items are displayed before turning them into a grid, 
+                    as grid has created a single column grid for the items. At this point, you may find it useful to work with the Grid Inspector, available as part of Firefox's 
+                    Developer Tools. If you view <a href="https://codepen.io/stufinn/pen/GGRQdm" target="_blank">this example</a> in Firefox and inspect the grid, you will see a 
+                    small icon next to the value <span class="highlight">grid</span>. Click this and then the grid on this element will be overlaid in the browser window.
+                </p>             
+    
+                <p>If we want to start making this more grid-like we need to add column tracks.</p>
+
+        </section>
+
+        <section class="main-section" id="Grid_Tracks">
+
+            <header>Grid Tracks</header>
+
+            <p>We define rows and columns on our grid with the <span class="highlight">grid-template-columns</span> and <span class="highlight">grid-template-rows</span> properties. These define grid tracks. 
+                A <em>grid track</em> is the space between any two lines on the grid. In the below image you can see a track highlighted – this is the first row track in our grid.</p>
+
+            <p>INSERT IMAGE HERE?</p>
+
+            <p>I can add to our earlier example by adding the grid-template-columns property, then defining the size of the column tracks.</p>
+
+            <p>I have now created a grid with three 200-pixel-wide column tracks. The child items will be laid out on this grid one in each grid cell.</p>
+
+
+            <code>
+                    &lt;div class="wrapper">            <br>
+                        &nbsp&lt;div>One&lt;/div>       <br>
+                        &nbsp&lt;div>Two&lt;/div>       <br>
+                        &nbsp&lt;div>Three&lt;/div>     <br>
+                        &nbsp&lt;div>Four&lt;/div>      <br>
+                        &nbsp&lt;div>Five&lt;/div>      <br>
+                &lt;/div>
+            </code>
+
+            <code>
+                .wrapper {                  <br>
+                    &nbsp display: grid;    <br>
+                    &nbsp grid-template-columns: 200px 200px 200px; <br>
+                }
+            </code>
+
+            <p>INSERT IMAGE HERE?</p>
+
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+
+            <h2>The fr Unit</h2>
+
+            <p>Tracks can be defined using any length unit. Grid also introduces an additional length unit to help us create flexible grid tracks. 
+                The new fr unit represents a fraction of the available space in the grid container. The next grid definition would create three 
+                equal width tracks that grow and shrink according to the available space.</p>
+
+            <code>
+                &lt;div class="wrapper">            <br>
+                    &nbsp&lt;div>One&lt;/div>       <br>
+                    &nbsp&lt;div>Two&lt;/div>       <br>
+                    &nbsp&lt;div>Three&lt;/div>     <br>
+                    &nbsp&lt;div>Four&lt;/div>      <br>
+                    &nbsp&lt;div>Five&lt;/div>      <br>
+                &lt;/div>
+            </code>
+
+            <code>
+                .wrapper {                  <br>
+                    &nbsp display: grid;    <br>
+                    &nbsp grid-template-columns: 1fr 1fr 1fr; <br>
+                }
+            </code>
+
+            <p>INSERT IMAGE HERE?</p>
+
+        </section>
+
+        <section class="main-section" id="Grid_Lines">
+
+                <header>Grid Lines</header>
+
+                <p>It should be noted that when we define a grid we define the grid tracks, not the lines. Grid then gives us numbered lines to use when positioning items. In our three column, two row grid we have four column lines.</p>
+
+                <p>INSERT IMAGE HERE?</p>
+    
+                <p>Lines are numbered according to the writing mode of the document. In a left-to-right language, line 1 is on the left-hand side of the grid. In a right-to-left language, it is on the right-hand side of the grid. Lines can also be named.</p>
+
+                <h2>Positioning items against lines</h2>
+
+                <p>We will be exploring line based placement in full detail in a later article. The following example demonstrates doing this in a simple way. When placing an item, we target the line – rather than the track.</p>
+
+                <p>In the following example I am placing the first two items on our three column track grid, using the grid-column-start, grid-column-end, grid-row-start and grid-row-end properties. Working from left to right, the first item is placed against column line 1, and spans to column line 4, which in our case is the far-right line on the grid. It begins at row line 1 and ends at row line 3, therefore spanning two row tracks.</p>
+
+                <p>The second item starts on grid column line 1, and spans one track. This is the default so I do not need to specify the end line. It also spans two row tracks from row line 3 to row line 5. The other items will place themselves into empty spaces on the grid.</p>
+
+                <code>
+                    &lt;div class="wrapper">            <br>
+                        &nbsp&lt;div>One&lt;/div>       <br>
+                        &nbsp&lt;div>Two&lt;/div>       <br>
+                        &nbsp&lt;div>Three&lt;/div>     <br>
+                        &nbsp&lt;div>Four&lt;/div>      <br>
+                        &nbsp&lt;div>Five&lt;/div>      <br>
+                    &lt;/div>
+                </code>
+                
+
+                <code>
+                    .wrapper { <br>
+                        &nbsp display: grid; <br>
+                        &nbsp grid-template-columns: repeat(3, 1fr); <br>
+                        &nbsp grid-auto-rows: 100px; <br>
+                    }  <br> <br>    
+                        
+                    .box1 { <br>
+                        &nbsp grid-column-end: 4; <br>
+                        &nbsp grid-row-start: 1; <br>
+                        &nbsp grid-row-end: 3; <br>
+                        &nbsp grid-column-start: 1; <br>
+                    } <br> <br>
+                        
+                    .box2 { <br>
+                        &nbsp grid-column-start: 1; <br>
+                        &nbsp grid-row-start: 3; <br>
+                        &nbsp grid-row-end: 5; <br>
+                    }
+                </code>
+
+                <!-- TO BE ADDED -->
+
                 <ul>
                     <li></li>
                     <li></li>
@@ -77,55 +235,13 @@
                 </ul>
         </section>
 
-        <section class="main-section" id="The_Vue_Instance">
-                <header>The Vue Instance</header>
+        <section class="main-section" id="Grid_Cells">
+            
+            <header>Grid Cells</header>
 
-                <h2>Creating a Vue Instance</h2>
+            <p></p>
 
-                <div id="grey-line"></div>
-
-                <p>Every Vue application starts by creating a new <em>Vue instance</em> with the Vue function:</p>
-
-                <code>
-                    var vm = new Vue({<br>
-                        // options<br>
-                      })<br>
-                </code>
-    
-                <p>Although not strictly associated with the MVVM pattern, Vue’s design was partly inspired by it. As a convention, we often use the variable vm (short for ViewModel) to refer to our Vue instance.</p>
-
-                <p>When you create a Vue instance, you pass in an options object. The majority of this guide describes how you can use these options to create your desired behavior. For reference, you can also browse the full list of options in the API reference.</p>             
-    
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-
-        </section>
-
-        <section class="main-section" id="Template_Syntax">
-            <header>Template Syntax</header>
-
-            <p>Vue.js uses an HTML-based template syntax that allows you to declaratively bind the rendered DOM to the underlying Vue instance’s data. All Vue.js templates are valid HTML that can be parsed by spec-compliant browsers and HTML parsers.</p>
-
-            <p>Under the hood, Vue compiles the templates into Virtual DOM render functions. Combined with the reactivity system, Vue is able to intelligently figure out the minimal number of components to re-render and apply the minimal amount of DOM manipulations when the app state changes.</p>
-                    
-            <p>If you are familiar with Virtual DOM concepts and prefer the raw power of JavaScript, you can also directly write render functions instead of templates, with optional JSX support.</p>
-
-            <h2>Interpolations</h2>
-
-            <h3>Text</h3>
-
-            <p>The most basic form of data binding is text interpolation using the “Mustache” syntax (double curly braces):</p>
-
-            <code>&lt;span>Message: {{ msg }}&lt;/span></code>
-
-            <p>The mustache tag will be replaced with the value of the <span class="highlight">msg</span> property on the corresponding data object. It will also be updated whenever the data object’s <span class="highlight">msg</span> property changes.</p>
-
-            <p>You can also perform one-time interpolations that do not update on data change by using the v-once directive, but keep in mind this will also affect any other bindings on the same node:</p>
-
-            <code>&lt;spanv-once>This will never change: {{ msg }}&lt;/span></code>
+            <code></code>
 
             <ul>
                 <li></li>
@@ -135,40 +251,20 @@
 
         </section>
 
-        <section class="main-section" id="Event_Handling">
-
-                <header>Event Handling</header>
-
-                <p>We can use the <span class="highlight">v-on</span> directive to listen to DOM events and run some JavaScript when they’re triggered.</p>
+        <section class="main-section" id="Grid_Areas">
+            
+                <header>Grid Areas</header>
     
-                <p>For example:</p>
-
-                <p>HTML</p>
-                <code>&lt;div id="example-1"><br>
-                    &nbsp &lt;button v-on:click="counter += 1">Add 1&lt;/button><br>
-                    &nbsp &lt;p>The button above has been clicked {{ counter }} times.&lt;/p><br>
-                    &lt;/div>
-                </code>
+                <p></p>
     
-                <p>JS</p>
-                <code>
-                        var example1 = new Vue({ <br>
-                            &nbsp    el: '#example-1', <br>
-                            &nbsp data: { <br>
-                                &nbsp &nbsp  counter: 0 <br>
-                            &nbsp} <br>
-                        })
-                </code>
-
-                <p>Result:</p>
-
-                <!-- TO BE ADDED -->
-
+                <code></code>
+    
                 <ul>
                     <li></li>
                     <li></li>
                     <li></li>
                 </ul>
+    
         </section>
         
 
