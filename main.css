@@ -54,6 +54,9 @@ body {
     flex-direction: column;
     width: 100vw;                   /* Ensures that page is limited to view width */
     box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    color:  	#7FFF00;
+    background-color: black;  /* Nicer black */
 }
 
 #main-doc {
@@ -68,11 +71,14 @@ code {
     display: block;
     padding: 15px 15px;
     line-height: 1.5em;
-    background-color: #E8E8EE;
-    border-radius: 2%;
+    /* background-color: #E8E8EE; */
+    /* background-color: grey; */
+    /* border-radius: 2%; */
     margin: 10px 0;
-    width: 70%;
-    min-width: 200px;
+    width: 40%;
+    min-width: 250px;
+    border: 1px dashed #7FFF00;
+    color: #7FFF00;
 }
 
 h2 {
@@ -97,7 +103,16 @@ p {
 .highlight {
     padding: 0 3px;
     background-color: #d3d3d3;
-    color: red;
+    color: black;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
 }
 
 /* NAV BAR */
@@ -106,7 +121,7 @@ nav {
     display: block;
     width: 25vw;
     height: 100vh;
-    border-right: solid 1px;
+    border-right: dashed 2px;
     position: fixed;
 }
 
@@ -133,7 +148,7 @@ nav {
     display: flex;
     align-items: center;
     height: 60px;
-    border-bottom: solid 1px black;
+    border-bottom: dashed 1px #7FFF00;
 }
 
 .main-section header {
@@ -146,5 +161,9 @@ nav {
     height: 50px;
     flex-direction: row;
     align-items: center;
-    border-bottom: solid 1px black;
+    border-bottom: dashed 1px #7FFF00;
+}
+
+section {
+    width: 90%;
 }
