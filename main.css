@@ -102,8 +102,8 @@ p {
 
 .highlight {
     padding: 0 3px;
-    background-color: #d3d3d3;
-    color: black;
+    font-weight: 600;
+    border: 1px dotted #7FFF00;
 }
 
 a {
@@ -111,9 +111,9 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+/* a:hover {
     color: white;
-}
+} */
 
 /* NAV BAR */
 
@@ -149,6 +149,8 @@ nav {
     align-items: center;
     height: 60px;
     border-bottom: dashed 1px #7FFF00;
+    font-size: calc(15px + 0.5vmax);
+    font-weight: bold;
 }
 
 .main-section header {
@@ -164,6 +166,19 @@ nav {
     border-bottom: dashed 1px #7FFF00;
 }
 
+.nav-link:hover {
+    background-color: #7FFF00;
+    color: black;
+    font-weight: 600;
+}
+
 section {
     width: 90%;
+    border-bottom: solid 1px #7FFF00;
+}
+
+/* IMAGES */
+
+#gridCellImage {
+    min-height: 100px;
 }
