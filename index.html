@@ -16,7 +16,7 @@
     
     <nav id="navbar">
 
-        <header>CSS Grid (Basic Concepts)</header>
+        <header id="navbarHeader">CSS Grid (Basic Concepts)</header>
 
         <a href="#Introduction" class="nav-link">Introduction</a>
 
@@ -37,7 +37,7 @@
     <main id="main-doc">
         <section class="main-section" id="Introduction">
             
-            <header>Introduction</header>
+            <header class="mainHeader">Introduction</header>
 
             <p>CSS Grid Layout introduces a two-dimensional grid system to CSS. Grids can be used to layout major page areas or small user interface elements. 
                 This article introduces the CSS Grid Layout and the new terminology that is part of the CSS Grid Layout Level 1 specification. The features shown in this overview will be then explained in greater detail in the rest of this guide. </p>
@@ -46,7 +46,7 @@
 
         <section class="main-section" id="What_Is_A_Grid?">     <!-- is the question-mark going to be an issue? -->
 
-                <header>What Is A Grid?</header>
+                <header class="mainHeader">What Is A Grid?</header>
 
                 <p>A grid is an intersecting set of horizontal and vertical lines – one set defining columns and the other rows. 
                     Elements can be placed onto the grid, respecting these column and row lines. CSS grid layout has the following features:</p>
@@ -65,7 +65,7 @@
         </section>
 
         <section class="main-section" id="The_Grid_Container">
-                <header>The Grid Container</header>
+                <header class="mainHeader">The Grid Container</header>
 
                 <p>We create a grid container by declaring <span class="highlight">display: grid</span> or <span class="highlight">inline-grid</span> on an element. 
                     As soon as we do this all direct children of that element will become grid items.</p>
@@ -103,7 +103,7 @@
 
         <section class="main-section" id="Grid_Tracks">
 
-            <header>Grid Tracks</header>
+            <header class="mainHeader">Grid Tracks</header>
 
             <p>We define rows and columns on our grid with the <span class="highlight">grid-template-columns</span> and <span class="highlight">grid-template-rows</span> properties. These define grid tracks. 
                 A <em>grid track</em> is the space between any two lines on the grid. In the below image you can see a track highlighted – this is the first row track in our grid.</p>
@@ -169,7 +169,7 @@
 
         <section class="main-section" id="Grid_Lines">
 
-                <header>Grid Lines</header>
+                <header class="mainHeader">Grid Lines</header>
 
                 <p>It should be noted that when we define a grid we define the grid tracks, not the lines. Grid then gives us numbered lines to use when positioning items. In our three column, two row grid we have four column lines.</p>
 
@@ -228,7 +228,7 @@
 
         <section class="main-section" id="Grid_Cells">
             
-            <header>Grid Cells</header>
+            <header class="mainHeader">Grid Cells</header>
 
             <p>
                 A <em>grid cell</em> is the smallest unit on a grid. Conceptually it is like a table cell. As we saw in our earlier examples, once a grid is defined as a parent the child items will lay themselves out in one cell each of the defined grid. 
@@ -241,11 +241,44 @@
 
         <section class="main-section" id="Grid_Areas">
             
-                <header>Grid Areas</header>
-    
-                <p>tems can span one or more cells both by row or by column, and this creates a grid area. Grid areas must be rectangular – it isn’t possible to create an L-shaped area for example. The highlighted grid area spans two row and two column tracks.</p>
+            <header class="mainHeader">Grid Areas</header>
 
-                <img src="assets/images/1_Grid_Area.png" id="gridAreaImage">
+            <p>Items can span one or more cells both by row or by column, and this creates a grid area. Grid areas must be rectangular – it isn’t possible to create an L-shaped area for example. The highlighted grid area spans two row and two column tracks.</p>
+
+            <img src="assets/images/1_Grid_Area.png" id="gridAreaImage">
+    
+        </section>
+
+        <section class="main-section" id="Resources_To_Learn_Grid">
+            
+            <header class="mainHeader">Resources To Learn Grid</header>
+
+            <h2>Mozilla Developer's Network - CSS Grid Documentation</h2>
+
+            <p>Some of the best resources to learn how to use CSS grid in your website are the technical documents that are available on the <a href="#" target="_blank">MDN website.</a></p>
+
+            <p>Cost: FREE!</p>
+            
+            <h2>Layout Land</h2>
+
+            <p>Jen Simmons (creator of CSS Grid Inspector) hosts a popular YouTube channel called <a href="#" target="_blank">Layout Land</a>. A number videos posted there are for learning CSS Grid.</p>
+
+            <p>Cost: FREE!</p>
+
+            <h2>Wes Bos' CSS Grid Course</h2>
+
+            <p><a href="#" target="_blank">Wes Bos</a> has created a [insert # of hours/videos] <a href="#" target="_blank">course to learn how to use CSS Grid</a>.</p>
+
+            <p>Cost: FREE</p>
+
+            <h2>[NAME HERE]</h2>
+
+            <p>The creater of the popular interactive game <a href="#" target="_blank">FlexBox zombies</a> has created a new game for learning CSS Grid: <a href="#" target="_blank">NAME HERE.</a> While FlexBox zombies is free, <a href="#" target="_blank">[NAME HERE]</a> is a paid (but still very popular) course.</a> </p>
+
+            <p>Cost: FREE</p>          
+
+
+            <img src="assets/images/1_Grid_Area.png" id="gridAreaImage">
     
         </section>
         

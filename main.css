@@ -61,8 +61,7 @@ body {
 
 #main-doc {
     display: block;
-    width: 73vw;
-    height: 2000px;
+    width: 73vw;    
     align-self: flex-end;           /* aligns section to the right side */
 }
 
@@ -74,7 +73,7 @@ code {
     /* background-color: #E8E8EE; */
     /* background-color: grey; */
     /* border-radius: 2%; */
-    margin: 10px 0;
+    margin: 20px 0;
     width: 40%;
     min-width: 250px;
     border: 1px dashed #7FFF00;
@@ -83,7 +82,9 @@ code {
 
 h2 {
     font-style: italic;
-    padding-bottom: 15px;
+    padding: 15px 0;
+    font-size: 25px;
+    font-weight: 600;
 }
 
 h3 {
@@ -141,10 +142,11 @@ nav {
     #main-doc {
         width: auto;
         padding: 15px;
+        border-top: dashed 1px #7FFF00;
     }
 }
 
-#navbar header {
+#navbarHeader {
     display: flex;
     align-items: center;
     height: 60px;
@@ -153,9 +155,10 @@ nav {
     font-weight: bold;
 }
 
-.main-section header {
+.mainHeader {
     padding: 15px 0;
     font-weight: bold;
+    font-size: 30px;
 }
 
 .nav-link {
@@ -181,4 +184,12 @@ section {
 
 #gridCellImage {
     min-height: 100px;
+}
+
+.main-section a {
+    text-decoration: underline;
+}
+
+.main-section a:hover {
+    color: white;
 }
