@@ -83,7 +83,7 @@ code {
 h2 {
     font-style: italic;
     padding: 15px 0;
-    font-size: 25px;
+    font-size: calc(10px + 1vmax);
     font-weight: 600;
 }
 
@@ -180,7 +180,12 @@ section {
     border-bottom: solid 1px #7FFF00;
 }
 
-/* IMAGES */
+/* No border at bottom of document */
+section:last-child {
+    border-bottom: none;
+}
+
+/* Images */
 
 #gridCellImage {
     min-height: 100px;
