@@ -179,18 +179,6 @@ nav {
 
 section {
     width: 90%;
-<<<<<<< HEAD
-}
-
-#attribution {
-    display: flex;
-    width: 100%;
-    border-top: 1px dashed #7FFF00;
-    height: 2em;
-    align-items: center;
-    justify-content: center;
-=======
-    border-bottom: solid 1px #7FFF00;
 }
 
 /* No border at bottom of document */
@@ -210,5 +198,14 @@ section:last-child {
 
 .main-section a:hover {
     color: white;
->>>>>>> master
+}
+
+#attribution {
+    display: flex;
+    width: 100%;
+    border-top: 1px dashed #7FFF00;
+    height: 2em;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 1px #7FFF00;
 }
