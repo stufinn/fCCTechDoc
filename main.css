@@ -167,3 +167,12 @@ nav {
 section {
     width: 90%;
 }
+
+#attribution {
+    display: flex;
+    width: 100%;
+    border-top: 1px dashed #7FFF00;
+    height: 2em;
+    align-items: center;
+    justify-content: center;
+}
