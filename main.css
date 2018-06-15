@@ -130,6 +130,7 @@ nav {
     flex: none;     /* akak "flex: 0 0 auto" link to source: https://codepen.io/Sphinxxxx/pen/WjwbEO and https://developer.mozilla.org/en-US/docs/Web/CSS/flex 'The item is sized according to its width and height properties. It is fully inflexible: it neither shrinks nor grows in relation to the flex container. This is equivalent to setting "flex: 0 0 auto".'*/
     border-right: dashed 2px;
     overflow: auto;
+    padding: 0 1em;
 }
 
 #navbarHeader {
