@@ -62,15 +62,14 @@ body {
     background-color: black;  /* Nicer black */
 }
 
-/* .wrapper {
+.wrapper {
     display: flex;
     height: 100vh;
-} */
+}
 
 #main-doc {
-    /* flex: 1 1 auto; */
-    /* overflow: auto; */
-    margin-left: 30vw;
+    flex: 1 1 auto;
+    overflow: auto;
     padding: 0 1em;
 /*  display: block;
     width: 73vw;    
@@ -128,11 +127,7 @@ a {
 /* NAV BAR */
 
 nav {
-    /* flex: none;  */    /* akak "flex: 0 0 auto" link to source: https://codepen.io/Sphinxxxx/pen/WjwbEO and https://developer.mozilla.org/en-US/docs/Web/CSS/flex 'The item is sized according to its width and height properties. It is fully inflexible: it neither shrinks nor grows in relation to the flex container. This is equivalent to setting "flex: 0 0 auto".'*/
-    position: fixed;
-    overflow: auto;
-    width: 30vw;
-    height: 100vh;
+    flex: none;     /* akak "flex: 0 0 auto" link to source: https://codepen.io/Sphinxxxx/pen/WjwbEO and https://developer.mozilla.org/en-US/docs/Web/CSS/flex 'The item is sized according to its width and height properties. It is fully inflexible: it neither shrinks nor grows in relation to the flex container. This is equivalent to setting "flex: 0 0 auto".'*/
     border-right: dashed 2px;
 }
 
@@ -167,40 +162,27 @@ nav {
 
 /* MEDIA QUERY */
 
-@media (min-width: 700px) {
+@media screen and (max-width: 700px) {
 
-    /* .wrapper {
+    .wrapper {
         flex-direction: column;
-    } */
+    }
 
     nav {
-        width: 100vw;
-        height: 30vh;
-        top: 0;
-        left: 0;
+        max-height: 100px;
+        min-height: 30vh;
+        overflow: auto;
         border-right: none;
         border-bottom: solid 1px #7FFF00;
-        padding-bottom: 1.5em;
-        background-color: black;
+        padding-bottom: 1em;
     }
-
-    #navbarHeader {
-        font-size: 2em;
-    }
-
-    .nav-link {
-        font-size: 1.5em;
-    }
-
 
     nav a:last-child {
         border-bottom: none;
     }
 
     #main-doc {
-        margin-left: 0;
-        padding-top: 1em;
-        margin-top: 30vh;
+        margin-top: 1em;
     }
     
 }
