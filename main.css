@@ -191,7 +191,7 @@ li {
     border-bottom: solid 1px var(--matrix-green);
     margin-top: 20px;
     line-height: 1.5em;
-    height: minmax(2em, 4em);
+    min-height: 2em;
 }
 
 #attribution a {
