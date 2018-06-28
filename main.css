@@ -76,9 +76,6 @@ code {
     display: block;
     padding: 15px 15px;
     line-height: 1.5em;
-    /* background-color: #E8E8EE; */
-    /* background-color: grey; */
-    /* border-radius: 2%; */
     margin: 20px 0;
     width: 40%;
     min-width: 250px;
@@ -147,6 +144,10 @@ a {
             "footer"
     }
 
+    #navbar {
+        border-right: none;
+    }
+
 
 }
 
@@ -164,7 +165,7 @@ a {
 }
 
 .mainHeader {
-    padding: 15px 0;
+    padding: 25px 0;
     font-weight: bold;
     font-size: 30px;
 }
@@ -200,6 +201,12 @@ section:last-child {
 
 .main-section a:hover {
     color: white;
+}
+
+ul {
+    list-style: circle;
+    list-style-position: inside;
+    padding: 1em 0;
 }
 
 #attribution {
