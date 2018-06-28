@@ -60,6 +60,7 @@ body {
     grid-template-areas: 
         "nav main";
     box-sizing: border-box;
+    text-align: justify;
     font-family: 'Courier New', Courier, monospace;
     color:  	var(--matrix-green);
     background-color: black;  /* Nicer black */
@@ -125,6 +126,7 @@ a {
     border-right: dashed 2px;
     align-items: stretch;
     overflow: auto;
+    font-size: 1.2em;
     /* position: fixed; */
 }
 
@@ -167,7 +169,8 @@ a {
     text-decoration: underline;
 }
 
-.main-section a:hover {
+.main-section a:hover,
+#attribution a:hover {
     color: white;
 }
 
@@ -177,14 +180,25 @@ ul {
     padding: 1em 0;
 }
 
+li {
+    line-height: 1.2em;
+}
+
 #attribution {
     display: grid;
     align-items: center;
     border-top: 1px solid var(--matrix-green);
     border-bottom: solid 1px var(--matrix-green);
     margin-top: 20px;
-    height: 2em;
+    line-height: 1.5em;
+    height: minmax(2em, 4em);
 }
+
+#attribution a {
+    text-decoration: underline;
+}
+
+/* MEDIA QUERIES */
 
 @media only screen and (max-width: 815px) {
     
